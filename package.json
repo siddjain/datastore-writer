@@ -1,0 +1,45 @@
+{
+  "name": "@siddjain/datastore-writer",
+  "version": "0.1.0",
+  "description": "a module to assist with bulk loading data into Google Datastore (aka Firestore in Datastore Mode)",
+  "scripts": {
+    "doc": "typedoc --out docs src/index.ts",
+    "build": "tsc",
+    "prepublish": "rm -rf ./dist && npm run build"
+  },
+  "main": "./dist/index.js",
+  "devDependencies": {
+    "@types/node": "^18.8.3",
+    "ts-node": "^10.9.1",
+    "typedoc": "^0.23.19",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "line-by-line": "^0.1.6",
+    "lodash": "^4.17.21",
+    "winston": "^3.8.2"
+  },
+  "peerDependencies": {
+    "@google-cloud/datastore": "^7.0.0"
+  },
+  "homepage": "https://github.com/siddjain/datastore-writer#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siddjain/datastore-writer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/siddjain/datastore-writer/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src/**/*.ts*",
+    "src/**/*.js",
+    "dist/**/*.d.ts*",
+    "dist/**/*.js",
+    "dist/**/*.map"
+  ],
+  "author": "Siddharth Jain",
+  "license": "MIT"
+}
