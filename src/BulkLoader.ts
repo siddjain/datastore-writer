@@ -1,7 +1,7 @@
 import { Datastore, Entity } from '@google-cloud/datastore';
 import LineByLineReader from 'line-by-line'
 import { strict as assert } from 'node:assert';
-import Writer from './DatastoreWriter'
+import { DatastoreWriter as Writer } from './DatastoreWriter'
 import logger from './logger'
 import _ from 'lodash'
 
@@ -20,7 +20,7 @@ const checkTrue = (arg, msg) => {
 /**
  * Used to create a Datastore entity from a string representation
  */
-interface IEntityConverter {
+export interface IEntityConverter {
     /**
      * Convert string to Datastore entity
      * @param line application dependent string representation of Datastore entity
@@ -28,7 +28,7 @@ interface IEntityConverter {
     convert(line: string): Entity
 }
 
-interface IBulkLoaderOptions {
+export interface IBulkLoaderOptions {
     /**
      * controls the maximum number of concurrent requests made to Google Datastore. It is recommended to keep this well below 100.
      */
@@ -50,7 +50,7 @@ interface IBulkLoaderOptions {
 /**
  * Bulk load data from text file into Google Datastore (Firestore in Datastore Mode).
  */
-class BulkLoader {
+export class BulkLoader {
 
     #writer: Writer;
     #path: string;
@@ -193,5 +193,3 @@ class BulkLoader {
         });
     }
 }
-
-export default BulkLoader;

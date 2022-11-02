@@ -29,7 +29,7 @@ import { strict as assert } from 'node:assert';
 import { hrtime } from 'node:process';
 import _ from 'lodash';
 
-interface IDatastoreWriterOptions {
+export interface IDatastoreWriterOptions {
     /**
      * controls the buffer size. entities are stored in a buffer and flushed (written to Datastore) when the buffer gets full.
      */
@@ -47,7 +47,7 @@ interface IDatastoreWriterOptions {
 /**
  * Class to make it easy to bulk load data into Google Datastore (Firestore in Datastore Mode).
  */
-class DatastoreWriter extends EventEmitter {
+export class DatastoreWriter extends EventEmitter {
 
     #entities = [];
     #datastore: Datastore;
@@ -201,5 +201,3 @@ class DatastoreWriter extends EventEmitter {
         }
     }
 }
-
-export default DatastoreWriter;

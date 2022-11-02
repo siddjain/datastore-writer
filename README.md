@@ -1,6 +1,7 @@
 # README
 
-A thin library to help with bulk loading data into Google Datastore (Firestore in Datastore Mode).
+A thin library to help with bulk loading data into Google Datastore (Firestore in Datastore Mode). When you include this library in your `package.json`,
+you also need to include `@google-cloud/datastore`. The library does not include it for you and treats it as a peer dependency.
 
 ## Usage
 
@@ -73,4 +74,4 @@ loader.load().then(() => {
 
 ## License
 
-[MIT](https://github.com/siddjain/datastore-writer/blob/main/LICENSE)
+[MIT](https://github.com/siddjain/datastore-writer/blob/master/LICENSE)
